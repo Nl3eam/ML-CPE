@@ -24,8 +24,8 @@ LAB03/
 ├── data/
 │   └── abalone.csv
 ├── images/                              # plots exported from the notebook
-├── Lab3_Regression_Classification_TH.ipynb
-├── Lab3_Regression_Classification_TH.html
+├── notebook
+│   └──Lab3_Regression_Classification_TH.html
 └── README.md
 ```
 

@@ -1,83 +1,116 @@
-# LAB03 — Regression & Classification
+# Wine Quality Prediction — Regression & Classification
 
-Lab assignment 3: predicting **Age** using Regression and **Gender** using Classification, based on the **Abalone Dataset**.
+Predicting **wine quality** (regression) and **good vs. not-good wine** (classification) from physicochemical measurements, using the Red Wine Quality dataset (Cortez et al., 2009).
 
-> **Note on the data:** the original assignment asked for age/gender prediction from **face images** (e.g. UTKFace), but due to the difficulty of accessing the large image files on Kaggle, the **Abalone Dataset** — a real public dataset from the UCI Machine Learning Repository — was used instead. The full machine learning workflow (Data Preparation → PCA → Train/Test → Evaluate → Compare) remains exactly the same; only the features change, from face-image pixels to physical shell measurements.
+This project was built as Worksheet 3 (Regression & Classification), covering Data Preprocessing, Regression, Classification, and Model Comparison in a single notebook.
 
-## 📊 Dataset
+---
 
-[Abalone Dataset (UCI/Kaggle)](https://www.kaggle.com/datasets/rodolfomendes/abalone-dataset) — physical measurements of 4,177 abalone samples.
+## Objectives
 
-| Column | Description |
-|---|---|
-| `Sex` | Gender: M (Male) / F (Female) / I (Infant) |
-| `Length`, `Diameter`, `Height` | Shell dimensions (mm) |
-| `Whole_weight`, `Shucked_weight`, `Viscera_weight`, `Shell_weight` | Weight of different parts (g) |
-| `Rings` | Number of shell rings → used to compute **Age = Rings + 1.5 (years)** |
+1. **Understand Regression and Classification Principles:** Comprehend the foundational concepts of Supervised Learning and explain the differences between predicting continuous values and categorical classification.
+2. **Data Preparation and Dimensionality Reduction:** Prepare datasets for modeling by selecting appropriate features and applying Principal Component Analysis (PCA) to reduce dimensionality and improve efficiency.
+3. **Develop Regression and Classification Models:** Build a Linear Regression model to predict wine quality score, and a Classification model to predict good vs. not-good wine, comparing the trade-offs of each approach.
+4. **Python Programming and Machine Learning Workflow:** Write Python code using machine learning libraries to train, test, and evaluate models.
+5. **Evaluate and Interpret Performance Metrics:** Analyze and interpret results using appropriate metrics — Accuracy, Precision, Recall, F1-score, ROC Curve, and AUC — and present the work on GitHub as part of a portfolio.
 
-Data file: [`data/abalone.csv`](data/abalone.csv)
+---
 
-## 📁 Folder Structure
+## Dataset
 
-```
-LAB03/
+- **Source:** [Red Wine Quality (Cortez et al., 2009) — Kaggle](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009) (original: [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/186/wine+quality))
+- **Samples:** 1,599 red wine samples
+- **Features (11):** fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol
+- **Regression target:** `quality` — a sensory score from 0-10 given by wine tasters
+- **Classification target:** `good_wine` — derived label, 1 if `quality >= 7` ("good"), else 0
+
+---
+
+## Laboratory Structure & Notebook Contents
+
+### LAB 1: Regression
+* **Simple Linear Regression:** Modeling the linear relationship between a single feature and wine quality.
+* **Multiple Linear Regression:** Developing a multivariable regression model using multiple features combined.
+* **Quality Prediction:** Predicting continuous wine quality scores and evaluating models using $R^2$, MAE, and RMSE.
+
+### LAB 2: Classification
+* **Preparing Classification Data:** Transforming target labels into binary classes (`good_wine` vs. others).
+* **Decision Boundary Visualization:** Visualizing the decision boundaries of classification models.
+* **Logistic Regression:** Implementing logistic regression for categorical prediction.
+* **Wine Category Prediction:** Predicting and classifying wine quality groups.
+* **Confusion Matrix:** Analyzing performance errors across classes.
+
+### LAB 3: Model Comparison
+* **Simple vs Multiple Linear Regression:** Comparing performance between single-feature and multi-feature regression models.
+* **Training vs Testing Performance:** Analyzing generalization, overfitting, and underfitting.
+* **Regression vs Classification:** Contrasting continuous prediction versus discrete classification approaches.
+* **Model Performance Metrics:** Summarizing metrics including Accuracy, Precision, Recall, F1-score, ROC Curve, and AUC.
+
+---
+
+## Project Structure
+
+```text
+project/
+├── notebook/
+│   └── wine_quality_regression_classification_lab.ipynb
 ├── data/
-│   └── abalone.csv
-├── images/                              # plots exported from the notebook
-├── notebook
-│   └──Lab3_Regression_Classification_TH.html
+│   └── winequality-red.csv
+├── image/
+│   ├── 01_eda_distributions.png
+│   ├── 02_pca_variance.png
+│   ├── 03_simple_linear_regression.png
+│   ├── 04_actual_vs_predicted_quality.png
+│   ├── 05_decision_boundary.png
+│   ├── 06_confusion_matrix.png
+│   └── 07_roc_curve.png
 └── README.md
 ```
 
-## ⚙️ Setup & How to Run
+---
 
-1. Install the required libraries:
+## Which CSV should you submit?
+
+Use the **real dataset you downloaded from Kaggle/UCI** (`winequality-red.csv`) — that's the one that belongs in `data/` and the one you submit. The other file, `_demo_winequality.csv`, is auto-generated **synthetic placeholder data** the notebook creates on its own only when it can't find the real CSV, purely so every cell can still run and be checked for errors. Its numbers are random and carry no real meaning about wine quality, so don't submit it — delete it (or just make sure the real CSV is in `data/` before your final run, so the notebook never falls back to demo mode).
+
+---
+
+## How to Run
+
+1. Download `winequality-red.csv` from the Kaggle link above (or the UCI repository) and place it in the `data/` folder.
+2. Install dependencies:
    ```bash
-   pip install numpy pandas matplotlib seaborn scikit-learn
+   pip install pandas numpy scikit-learn matplotlib
    ```
-2. Open `Lab3_Regression_Classification_TH.ipynb` with Jupyter Notebook / JupyterLab / VS Code
-3. Run the cells in order (make sure `data/abalone.csv` is in the path referenced by the notebook)
+3. Open `notebook/wine_quality_regression_classification_lab.ipynb` in Jupyter, VS Code, Kaggle, or Google Colab, and run all cells (Restart & Run All).
+   - If the CSV isn't found in `data/`, the notebook automatically falls back to a synthetic **DEMO MODE** dataset so every cell can still run — swap in the real CSV for meaningful results (see note above).
+4. All plots are automatically saved to `../figures/` as you run the notebook.
 
-**Libraries used:** `numpy`, `pandas`, `matplotlib`, `seaborn`, `scikit-learn` (`train_test_split`, `LinearRegression`, `LogisticRegression`, `StandardScaler`, `LabelEncoder`, `PCA`, and various metrics)
+---
 
-`RANDOM_STATE = 42` is set throughout so results are reproducible.
+## Key Results
 
-## 🔍 Workflow
+> Replace this table with the numbers from your own run once you have the real dataset.
 
-### Exploratory Data Analysis (EDA)
-- Check for missing values and inspect the distribution of the data
-- Visualize the distribution of Age and Sex
-- Build a correlation heatmap — `Shell_weight` turns out to have the strongest correlation with `Age`/`Rings` among single features
+| Task | Metric | Score |
+|---|---|---|
+| Regression (Quality) | MAE / RMSE / R² | — |
+| Classification (Good/Bad Wine) | Accuracy / Precision / Recall / F1 | — |
+| Classification (Good/Bad Wine) | AUC | — |
 
-### LAB 1: Regression (Age Prediction)
-1. **Simple Linear Regression** — predict Age from a single feature (`Shell_weight`)
-2. **Multiple Linear Regression** — predict Age from all numeric features, including `Sex` after one-hot encoding
-3. **PCA + Linear Regression** — reduce the dimensionality of the physical features with PCA before fitting a regression model
+**Notes on the dataset:** "Good" wines (quality ≥ 7) are a small minority of the data, so Accuracy alone can be misleading — Precision, Recall, F1, and AUC give a fairer picture of classification performance. Wine quality is a subjective sensory score shaped by many interacting chemical factors, so don't expect a very high R² even from the best regression model — a modest R² with a clear discussion of *why* is a perfectly valid, honest result.
 
-### LAB 2: Classification (Gender Prediction)
-- Use only the Male/Female subset (Infants excluded) → turns the task into binary classification
-- Visualize the decision boundary using the two most relevant features (`Shell_weight`, `Diameter`)
-- Fit a **Logistic Regression** model using all features, evaluated with a confusion matrix and ROC curve/AUC
+---
 
-### LAB 3: Model Comparison
-- Compare Simple vs. Multiple vs. PCA-based Linear Regression (R², MAE, RMSE, R² gap)
-- Compare the conceptual differences between Regression and Classification
-- Summarize the metrics of both tasks side by side
-
-## 📈 Results Summary
-
-**Regression (Age Prediction):**
-- Multiple Linear Regression clearly outperforms Simple Linear Regression, since it combines information from multiple dimensions
-- PCA + Linear Regression reduces the number of features while keeping performance close to Multiple LR
-
-**Classification (Gender Prediction):**
-- Logistic Regression can separate genders to some extent, but not very strongly, since the physical characteristics of males and females overlap considerably (unlike Infants, which are more clearly distinguishable)
-
-Full numeric results and plots are available in the notebook ([`.ipynb`](Lab3_Regression_Classification_TH.ipynb) or the exported [`.html`](Lab3_Regression_Classification_TH.html) version).
-
-## 🛠 Tools
+## Tech Stack
 
 - Python 3
-- scikit-learn (LinearRegression, LogisticRegression, PCA, StandardScaler, LabelEncoder)
-- pandas, numpy for data handling
-- matplotlib, seaborn for visualization
+- pandas, NumPy
+- scikit-learn (LinearRegression, LogisticRegression, PCA, StandardScaler, metrics)
+- Matplotlib
+
+---
+
+## Author
+
+_Add your name / student ID here._

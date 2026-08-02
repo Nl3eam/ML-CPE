@@ -44,7 +44,7 @@ LAB03/
 
 ## 🔍 Workflow
 
-### 0. Exploratory Data Analysis (EDA)
+### Exploratory Data Analysis (EDA)
 - Check for missing values and inspect the distribution of the data
 - Visualize the distribution of Age and Sex
 - Build a correlation heatmap — `Shell_weight` turns out to have the strongest correlation with `Age`/`Rings` among single features

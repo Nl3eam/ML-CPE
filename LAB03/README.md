@@ -51,9 +51,7 @@ This project was built as Worksheet 3 (Regression & Classification), covering Da
 ## Project Structure
 
 ```text
-project/
-├── notebook/
-│   └── wine_quality_regression_classification_lab.ipynb
+LAB03/
 ├── data/
 │   └── winequality-red.csv
 ├── image/
@@ -64,6 +62,8 @@ project/
 │   ├── 05_decision_boundary.png
 │   ├── 06_confusion_matrix.png
 │   └── 07_roc_curve.png
+├── notebook/
+│   └── wine_quality_regression_classification_lab.ipynb
 └── README.md
 ```
 

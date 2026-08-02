@@ -113,4 +113,4 @@ Use the **real dataset you downloaded from Kaggle/UCI** (`winequality-red.csv`) 
 
 ## Author
 
-_Add your name / student ID here._
+Lab 3: Regression & Classification — Machine Learning course

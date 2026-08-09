@@ -139,21 +139,20 @@ Stars values are close together (e.g. 3.75 vs 4.0).
 ```text
 LEB1-KNN-Ramen/
 │
+├── classification/
+│   └── outputs/
+│   │   ├── 01_k_curve.png         ← accuracy comparison across k values
+│   │   ├── 02_confusion_matrix.png
+│   │   └── predictions.csv        ← actual predictions on the test set
+│   │
+│   ├── data_loader.py             ← load / clean / encode / split / scale
+│   ├── evaluate.py                ← plots + confusion matrix + report
+│   ├── knn_model.py               ← wrapper around KNeighborsClassifier
+│   └── main.py                    ← main script, runs the full pipeline
+│ 
 ├── data-ramen/
 │   └── ramen-ratings.csv          ← raw data from Kaggle
-│
-├── classification/
-│   ├── main.py                    ← main script, runs the full pipeline
-│   ├── data_loader.py             ← load / clean / encode / split / scale
-│   ├── knn_model.py               ← wrapper around KNeighborsClassifier
-│   ├── evaluate.py                ← plots + confusion matrix + report
-│   └── outputs/
-│       ├── 01_k_curve.png         ← accuracy comparison across k values
-│       ├── 02_confusion_matrix.png
-│       └── predictions.csv        ← actual predictions on the test set
-│
-├── requirements.txt
-├── link-data.txt                  ← link to the original data source
+│ 
 └── README.md
 ```
 

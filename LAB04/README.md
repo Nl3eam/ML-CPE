@@ -1,4 +1,4 @@
-# LEB 1 — K-Nearest Neighbors (KNN) on the Ramen Ratings Dataset
+# Ramen Ratings
 
 This project follows Assignment 4 (LEB 1: KNN on a Dataset of Your Choice).
 The **Ramen Ratings** dataset from Kaggle was chosen to build a complete

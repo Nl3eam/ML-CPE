@@ -1,6 +1,6 @@
 # Ramen Ratings
 
-This project follows Assignment 4 (LEB 1: KNN on a Dataset of Your Choice).
+This project follows Assignment 4 .
 The **Ramen Ratings** dataset from Kaggle was chosen to build a complete
 K-Nearest Neighbors (KNN) pipeline: loading the data, cleaning it,
 engineering features, scaling, training the model with several k values,

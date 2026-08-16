@@ -41,12 +41,12 @@ ramen-svm/
 │   │
 │   └── outputs/
 │   │   ├── classes.json
-│   │   ├── stars_distribution.png  <- Stars histogram + Good/Not Good cutoff
-│   │   ├── style_and_country.png   <- review counts by Style, avg Stars by Country
 │   │   ├── confusion_matrix.png
-│   │   ├── roc_curve.png           <- ROC curve on the held-out test set
 │   │   ├── pca_scatter.png         <- 2D PCA view of Good vs Not Good separability
-│   │   └── prediction_sample.png
+│   │   ├── prediction_sample.png
+│   │   ├── roc_curve.png           <- ROC curve on the held-out test set
+│   │   ├── stars_distribution.png  <- Stars histogram + Good/Not Good cutoff
+│   │   └── style_and_country.png   <- review counts by Style, avg Stars by Country
 │   │
 │   ├── data_load.py
 │   ├── evaluate.py

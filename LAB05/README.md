@@ -38,22 +38,24 @@ ramen-svm/
 ├── mini-proj/
 │   ├── data/
 │   │   └── ramen-ratings.csv      <- place the Kaggle CSV here
-│   ├── main.py
-│   ├── test_svm.py
+│   │
+│   └── outputs/
+│   │   ├── classes.json
+│   │   ├── stars_distribution.png  <- Stars histogram + Good/Not Good cutoff
+│   │   ├── style_and_country.png   <- review counts by Style, avg Stars by Country
+│   │   ├── confusion_matrix.png
+│   │   ├── roc_curve.png           <- ROC curve on the held-out test set
+│   │   ├── pca_scatter.png         <- 2D PCA view of Good vs Not Good separability
+│   │   └── prediction_sample.png
+│   │
 │   ├── data_load.py
+│   ├── evaluate.py
+│   ├── main.py
 │   ├── preprocess.py
 │   ├── split_data.py
+│   ├── test_svm.py
 │   ├── svm_model.py
-│   ├── evaluate.py
-│   ├── visualize.py               <- extra EDA / model-analysis plots
-│   └── outputs/
-│       ├── classes.json
-│       ├── stars_distribution.png  <- Stars histogram + Good/Not Good cutoff
-│       ├── style_and_country.png   <- review counts by Style, avg Stars by Country
-│       ├── confusion_matrix.png
-│       ├── roc_curve.png           <- ROC curve on the held-out test set
-│       ├── pca_scatter.png         <- 2D PCA view of Good vs Not Good separability
-│       └── prediction_sample.png
+│   └── visualize.py               <- extra EDA / model-analysis plots
 │
 └── README.md
 ```

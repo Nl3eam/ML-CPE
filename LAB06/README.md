@@ -52,7 +52,6 @@ ML-06-NN/
 ├── requirements.txt                # required libraries
 │
 └── mini-proj/
-    ├── README.md
     │
     ├── data/
     │   └── ramen-ratings.csv       # raw dataset from Kaggle (2,580 rows)

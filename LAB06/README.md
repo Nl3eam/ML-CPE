@@ -48,7 +48,7 @@ Why a 4.0 threshold:
 ```text
 ML-06-NN/
 │
-├── README.md                       # this file
+├── README.md                      
 ├── requirements.txt                # required libraries
 │
 └── mini-proj/

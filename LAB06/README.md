@@ -1,4 +1,4 @@
-# ML-06-Neural Network (NN) — Ramen Ratings Edition
+# ML-06-Neural Network (NN) — Ramen Ratings
 
 This project adapts the `ML-06-NN` lesson (originally a Cat vs Dog image classifier) to work with **tabular data** instead — specifically the [Ramen Ratings](https://www.kaggle.com/datasets/residentmario/ramen-ratings) dataset on Kaggle. The overall pipeline (load data → preprocess → split → train NN → evaluate → test) stays identical to the original. What changes is *how the input data is prepared* and *the first layer of the model*, so it fits tabular data instead of images.
 

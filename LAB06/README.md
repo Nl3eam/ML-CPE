@@ -182,17 +182,3 @@ The model catches "Highly Rated" items with a decent recall (71%), but precision
 - **No cross-validation** was used, to keep the code as simple and close to the original lesson's style as possible
 
 ---
-
-## 8. Comparison with the Original (Cat vs Dog)
-
-| Pipeline stage | Original (images) | This version (tabular) |
-|---|---|---|
-| Data source | `PetImages/` image folder | `ramen-ratings.csv` file |
-| Data loading | Read and resize images with OpenCV | Read CSV with pandas |
-| Preprocessing | Resize images + convert BGR→RGB | One-hot encode Brand/Style/Country |
-| Model input | Image (H, W, 3) | 1D one-hot vector |
-| Model's first layer | `Rescaling` + `Flatten` | None (data is already ready to use) |
-| Remaining model layers | Identical | Identical |
-| Evaluation | Identical | Identical |
-| Data splitting | Identical | Identical |
-| Test-time display | 2×2 image grid | Text table + bar chart |

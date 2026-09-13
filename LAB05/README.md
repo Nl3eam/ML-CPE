@@ -1,10 +1,4 @@
-# ML-05-SVM (revised) — Ramen Ratings
-
-Revised from [aproot-en/Machine-Learning-Course · ML-05-SVM](https://github.com/aproot-en/Machine-Learning-Course/tree/main/ML-05-SVM),
-which built an SVM image classifier for cats vs dogs. This version keeps the
-same pipeline shape (load → feature engineer → split → train SVM → evaluate →
-predict) but swaps in a **tabular text/categorical dataset**: Kaggle's
-[Ramen Ratings](https://www.kaggle.com/datasets/residentmario/ramen-ratings).
+# ML-05-SVM — Ramen Ratings
 
 ## Data
 

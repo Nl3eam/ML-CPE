@@ -44,8 +44,8 @@ LAB07/
 │   ├── split_data.py                 # stratified train/val/test split (ทำก่อนสร้าง vocabulary)
 │   └── test_cnn.py                   # เช็คตัวอย่างการทำนาย (แสดงผลเป็น text panel)
 │
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ## Setup

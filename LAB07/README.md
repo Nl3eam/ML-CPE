@@ -22,25 +22,29 @@ GlobalMaxPooling1D → Dense) เรียนรู้รูปแบบคำ�
 ## Project structure
 
 ```text
-m-project/
-├── data/
-│   └── ramen-ratings.csv       # ต้องดาวน์โหลดเอง (ดูหัวข้อ Get the data)
-├── data_loader.py               # อ่าน CSV, รวมคอลัมน์เป็นข้อความ, ติด label Good/Ordinary
-├── preprocessing.py              # clean ข้อความ, สร้าง vocabulary, แปลงเป็น sequence ความยาวคงที่
-├── split_data.py                 # stratified train/val/test split (ทำก่อนสร้าง vocabulary)
-├── cnn_model.py                  # build, train, save, predict ด้วย CNN
-├── evaluate.py                   # accuracy, report, confusion matrix, curves
-├── test_cnn.py                   # เช็คตัวอย่างการทำนาย (แสดงผลเป็น text panel)
-├── main.py                       # รัน pipeline ทั้งหมด
+LAB07/
+├── m-project/
+│   ├── data/
+│   │   └── ramen-ratings.csv       # ต้องดาวน์โหลดเอง (ดูหัวข้อ Get the data)
+│   │ 
+│   └── outputs/                      # ถูกสร้างตอนรันครั้งแรก
+│   │   ├── classes.json
+│   │   ├── confusion_matrix.png
+│   │   ├── history.json
+│   │   ├── prediction_sample.png
+│   │   ├── text_test.json             # ข้อความดิบของชุด test (ให้ test_cnn.py แสดงผล)
+│   │   ├── training_history.png
+│   │   └── vocabulary.json            # vocabulary ที่สร้างจากชุด training
+│   │
+│   ├── cnn_model.py                  # build, train, save, predict ด้วย CNN
+│   ├── data_loader.py               # อ่าน CSV, รวมคอลัมน์เป็นข้อความ, ติด label Good/Ordinary
+│   ├── evaluate.py                   # accuracy, report, confusion matrix, curves
+│   ├── main.py                       # รัน pipeline ทั้งหมด
+│   ├── preprocessing.py              # clean ข้อความ, สร้าง vocabulary, แปลงเป็น sequence ความยาวคงที่
+│   ├── split_data.py                 # stratified train/val/test split (ทำก่อนสร้าง vocabulary)
+│   └── test_cnn.py                   # เช็คตัวอย่างการทำนาย (แสดงผลเป็น text panel)
+│
 ├── requirements.txt
-└── outputs/                      # ถูกสร้างตอนรันครั้งแรก
-│   ├── classes.json
-│   ├── vocabulary.json            # vocabulary ที่สร้างจากชุด training
-│   ├── text_test.json             # ข้อความดิบของชุด test (ให้ test_cnn.py แสดงผล)
-│   ├── history.json
-│   ├── confusion_matrix.png
-│   ├── training_history.png
-│   └── prediction_sample.png
 └── README.md
 ```
 

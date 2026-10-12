@@ -34,13 +34,13 @@ ML-08-DCNN/
 │   └── ramen-ratings.csv
 │
 ├── mini-proj/
-│   ├── main.py            # สคริปต์หลัก รันทุกขั้นตอน
 │   ├── data_loader.py     # อ่าน CSV, ทำความสะอาด, สร้างข้อความและป้ายกำกับ
+│   ├── evaluate.py        # accuracy, classification report, confusion matrix, กราฟ history
+│   ├── main.py            # สคริปต์หลัก รันทุกขั้นตอน
 │   ├── preprocessing.py   # แปลงข้อความเป็นตัวพิมพ์เล็ก, เข้ารหัสทีละตัวอักษร, เติม padding
 │   ├── split_data.py      # แบ่ง train / validation / test แบบ stratified
-│   ├── vgg_model.py       # สร้าง, เทรน, บันทึก และทำนายด้วยโมเดล 1-D VGG
-│   ├── evaluate.py        # accuracy, classification report, confusion matrix, กราฟ history
 │   ├── test_vgg.py        # สุ่มทำนาย 4 แถวจากชุดทดสอบ
+│   └── vgg_model.py       # สร้าง, เทรน, บันทึก และทำนายด้วยโมเดล 1-D VGG
 │   │
 │   └── outputs/           # ไฟล์ที่สร้างขึ้นหลังรัน (โมเดล, กราฟ, ข้อมูลที่แบ่งแล้ว)
 │       ├── classes.json

@@ -95,7 +95,7 @@ pip install -r requirements.txt
 ```bash
 cd mini-proj
 python main.py        # เทรนและประเมินผล
-python test_vgg.py    # สุ่มทำนาย 4 แถว (ต้องรัน main.py ให้เสร็จก่อน)
+python test_vgg.py    # สุ่มทำนาย 9 แถว (ต้องรัน main.py ให้เสร็จก่อน)
 ```
 
 ## ค่าที่ปรับได้ใน `main.py`

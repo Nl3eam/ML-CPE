@@ -43,6 +43,11 @@ ML-08-DCNN/
 │   ├── test_vgg.py        # สุ่มทำนาย 4 แถวจากชุดทดสอบ
 │   │
 │   └── outputs/           # ไฟล์ที่สร้างขึ้นหลังรัน (โมเดล, กราฟ, ข้อมูลที่แบ่งแล้ว)
+│       ├── classes.json
+│       ├── cinfusion_matrix.png
+│       ├── history.json
+│       ├── prediction_sample.png
+│       └── training_history.png
 │
 └── requirements.txt
 ```
